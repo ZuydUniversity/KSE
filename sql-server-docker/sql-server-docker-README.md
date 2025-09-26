@@ -81,6 +81,7 @@ docker-compose logs sqlserver
 ### Verbinding maken
 
 **Connection String:**
+
 ```
 Server=localhost,1433;Database=master;User Id=sa;Password=DevPassword123!;TrustServerCertificate=True;
 ```
@@ -91,6 +92,24 @@ Server=localhost,1433;Database=master;User Id=sa;Password=DevPassword123!;TrustS
 - **Username:** sa
 - **Password:** DevPassword123!
 - **Database:** master (standaard database)
+
+**⚠️ Belangrijke opmerking voor applicatieontwikkeling:**
+
+Als je **geen SQL Server lokaal op je machine hebt geïnstalleerd** en alleen deze Docker container gebruikt, moet je in je applicaties (zoals .NET, Java, Python, etc.) de connection string aanpassen naar de bovenstaande waarden. 
+
+**Veel voorkomende situaties:**
+- **Visual Studio projecten** - Pas de connection string aan in `appsettings.json` of `web.config`
+- **Entity Framework** - Update de connection string in je `DbContext` configuratie
+- **Java applicaties** - Wijzig de database URL in je `application.properties` of `application.yml`
+- **Python projecten** - Pas de database configuratie aan in je settings
+- **Node.js applicaties** - Update de database configuratie in je environment variables of config bestanden
+
+**Typische fouten:**
+- Applicaties die nog verwijzen naar `(LocalDB)` of `.\SQLEXPRESS`
+- Connection strings die uitgaan van Windows Authentication in plaats van SQL Authentication
+- Verkeerde poort nummers of server names
+
+**Let op:** Deze Docker setup gebruikt **SQL Server Authentication** (sa gebruiker), niet Windows Authentication!
 
 ### Database Management Tools
 
