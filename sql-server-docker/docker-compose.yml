@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: kse-sqlserver-dev
+    hostname: sqlserver
+    restart: unless-stopped
+    ports:
+      - "1433:1433"
+    environment:
+      # Accepteer de End-User License Agreement
+      - ACCEPT_EULA=Y
+      # Sterke wachtwoord vereist (minimaal 8 tekens, hoofdletters, kleine letters, cijfers en speciale tekens)
+      - SA_PASSWORD=DevPassword123!
+      # Optioneel: stel de standaard database collation in
+      - MSSQL_COLLATION=SQL_Latin1_General_CP1_CI_AS
+    volumes:
+      # Persistente data opslag
+      - sqlserver_data:/var/opt/mssql
+      # Optioneel: mount een lokale map voor backups
+      - ./sql-backups:/var/opt/mssql/backup
+    networks:
+      - kse-network
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P DevPassword123! -Q 'SELECT 1'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  # Optioneel: SQL Server Management Studio alternatief (Azure Data Studio web interface)
+  adminer:
+    image: adminer:latest
+    container_name: kse-adminer
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    networks:
+      - kse-network
+    depends_on:
+      - sqlserver
+
+volumes:
+  sqlserver_data:
+    driver: local
+
+networks:
+  kse-network:
+    driver: bridge
