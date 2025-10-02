@@ -2,13 +2,25 @@
 
 ## Overzicht
 
-Deze repository bevat richtlijnen, uitleg en documentatie voor diverse software engineering gerelateerde aangelegenheden in het onderwijs. Het Kenniscluster Software Engineering verzamelt hier kennis en best practices voor:
+Deze repository bevat richtlijnen, uitleg en documentatie voor diverse software engineering gerelateerde aangelegenheden in het onderwijs. Het Kenniscluster Software Engineering verzamelt hier kennis en best practices.
 
-- **Tool installaties en configuraties** - Stap-voor-stap instructies voor het installeren en configureren van ontwikkeltools
-- **Branching strategieën** - Uitleg over verschillende Git workflows en branching modellen
-- **Ontwikkelmethodieken** - Documentatie over software development practices
-- **Code kwaliteit** - Richtlijnen voor code reviews, testing en documentatie
-- **Platform specifieke instructies** - Guides voor verschillende ontwikkelomgevingen
+## Inhoudsopgave
+
+### Voorbeelden en Tutorials in deze repository
+
+| Map | Beschrijving | README |
+|-----|--------------|--------|
+| [sql-server-docker](./sql-server-docker) | Complete SQL Server ontwikkelomgeving met Docker. Bevat een Docker Compose setup voor lokale SQL Server instantie met Adminer web interface voor databasebeheer. Perfect voor studenten en docenten die een consistente database omgeving nodig hebben zonder lokale SQL Server installatie. | [📖 README](./sql-server-docker/sql-server-docker-README.md) |
+
+### Voorbeelden en Tutorials in andere repositories
+
+| Repository | Beschrijving | README |
+|------------|--------------|--------|
+| [docker-demo](https://github.com/ZuydUniversity/docker-demo) | Uitgebreide Docker tutorial met praktische voorbeelden. Bevat uitleg over Docker concepten, basis commandos, Dockerfile structuur, Docker Compose en Python/Flask integratie. Ideaal voor studenten die containerization willen leren met hands-on voorbeelden en best practices. **Note: Repository is gearchiveerd** | [📖 README](https://github.com/ZuydUniversity/docker-demo/blob/main/README.md) |
+| [ansible-demo](https://github.com/ZuydUniversity/ansible-demo) | Ansible automatiseringstool demonstratie met Azure integratie. Toont hoe je virtuele machines kunt beheren en configureren met Ansible playbooks, inclusief Azure credentials setup en SSH configuratie. Perfect voor Infrastructure as Code (IaC) leren. **Note: Repository is gearchiveerd** | [📖 README](https://github.com/ZuydUniversity/ansible-demo/blob/main/README.md) |
+| [API_example_dotnet_todolist](https://github.com/ZuydUniversity/API_example_dotnet_todolist) | Complete .NET Core API tutorial met ToDoList applicatie. Demonstreert gelaagde architectuur, CRUD operaties, Swagger documentatie, HTTP status codes en authenticatie. Inclusief stap-voor-stap instructies voor het bouwen van een professionele web API vanaf een console applicatie. | [📖 README](https://github.com/ZuydUniversity/API_example_dotnet_todolist/blob/main/README.md) |
+
+
 
 ## Structuur
 
