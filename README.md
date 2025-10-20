@@ -10,7 +10,7 @@ Deze repository bevat richtlijnen, uitleg en documentatie voor diverse software 
 
 | Map | Beschrijving | README |
 |-----|--------------|--------|
-| [sql-server-docker](./sql-server-docker) | Complete SQL Server ontwikkelomgeving met Docker. Bevat een Docker Compose setup voor lokale SQL Server instantie met Adminer web interface voor databasebeheer. Perfect voor studenten en docenten die een consistente database omgeving nodig hebben zonder lokale SQL Server installatie. | [📖 README](./sql-server-docker/sql-server-docker-README.md) |
+| [sql-server-docker](./sql-server-docker) | Complete SQL Server ontwikkelomgeving met Docker. Bevat een Docker Compose setup voor lokale SQL Server instantie met Adminer web interface voor databasebeheer. Perfect voor studenten en docenten die een consistente database omgeving nodig hebben zonder lokale SQL Server installatie. | [📖 README](./sql-server-docker/README.md) |
 
 ### Voorbeelden en Tutorials in andere repositories
 
@@ -19,6 +19,7 @@ Deze repository bevat richtlijnen, uitleg en documentatie voor diverse software 
 | [docker-demo](https://github.com/ZuydUniversity/docker-demo) | Uitgebreide Docker tutorial met praktische voorbeelden. Bevat uitleg over Docker concepten, basis commandos, Dockerfile structuur, Docker Compose en Python/Flask integratie. Ideaal voor studenten die containerization willen leren met hands-on voorbeelden en best practices. **Note: Repository is gearchiveerd** | [📖 README](https://github.com/ZuydUniversity/docker-demo/blob/main/README.md) |
 | [ansible-demo](https://github.com/ZuydUniversity/ansible-demo) | Ansible automatiseringstool demonstratie met Azure integratie. Toont hoe je virtuele machines kunt beheren en configureren met Ansible playbooks, inclusief Azure credentials setup en SSH configuratie. Perfect voor Infrastructure as Code (IaC) leren. **Note: Repository is gearchiveerd** | [📖 README](https://github.com/ZuydUniversity/ansible-demo/blob/main/README.md) |
 | [API_example_dotnet_todolist](https://github.com/ZuydUniversity/API_example_dotnet_todolist) | Complete .NET Core API tutorial met ToDoList applicatie. Demonstreert gelaagde architectuur, CRUD operaties, Swagger documentatie, HTTP status codes en authenticatie. Inclusief stap-voor-stap instructies voor het bouwen van een professionele web API vanaf een console applicatie. | [📖 README](https://github.com/ZuydUniversity/API_example_dotnet_todolist/blob/main/README.md) |
+| [SecuritySQLInjectionExample](https://github.com/ZuydUniversity/SecuritySQLInjectionExample) | Security tutorial over SQL injection aanvallen en beschermingsmaatregelen. Demonstreert kwetsbare code voorbeelden en veilige implementaties om studenten te leren over web application security en secure coding practices. **Note: Repository mogelijk niet beschikbaar** | [📖 README](https://github.com/ZuydUniversity/SecuritySQLInjectionExample/blob/main/README.md) |
 
 
 
@@ -41,8 +42,6 @@ Het Kenniscluster Software Engineering bestaat uit de volgende leden:
 - **Nicky Jaspers** - nicky.jaspers [at] zuyd [dot] nl
 - **Roy Mengelers** - roy.mengelers [at] zuyd [dot] nl
 - **Miel Noelanders** - miel.noelanders [at] zuyd [dot] nl
-- **Erik Schoen** - erik.schoen [at] zuyd [dot] nl
-- **Bob Tossaint** - bob.tossaint [at] zuyd [dot] nl
 - **Rick Warnecke** - rick.warnecke [at] zuyd [dot] nl
 
 ## Bijdragen
