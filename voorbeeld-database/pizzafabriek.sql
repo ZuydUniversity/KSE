@@ -206,7 +206,7 @@ INSERT INTO PizzaIngredienten (PizzaID, IngredientID, Hoeveelheid) VALUES
 -- Salami
 (3, 1, 80), (3, 2, 150), (3, 6, 80),
 -- Quattro Formaggi
-(4, 2, 100), (4, 3, 50), (4, 4, 30), (4, 4, 30),
+(4, 2, 100), (4, 3, 50), (4, 4, 60),
 -- Hawaii
 (5, 1, 80), (5, 2, 150), (5, 5, 80), (5, 18, 80),
 -- Pepperoni
