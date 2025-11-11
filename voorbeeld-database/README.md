@@ -1,6 +1,6 @@
 # Pizzafabriek Database
 
-Een oefendatabase voor SQL Server om studenten te laten oefenen met SQL queries.
+Een oefendatabase voor SQL Server om studenten te laten oefenen met SQL queries. TIP: om SQL te leren of uitgelegd te krijgen kijk je ook hier: https://www.w3schools.com/sql/default.asp
 
 ## Overzicht
 
