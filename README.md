@@ -11,6 +11,7 @@ Deze repository bevat richtlijnen, uitleg en documentatie voor diverse software 
 | Map | Beschrijving | README |
 |-----|--------------|--------|
 | [sql-server-docker](./sql-server-docker) | Complete SQL Server ontwikkelomgeving met Docker. Bevat een Docker Compose setup voor lokale SQL Server instantie met Adminer web interface voor databasebeheer. Perfect voor studenten en docenten die een consistente database omgeving nodig hebben zonder lokale SQL Server installatie. | [📖 README](./sql-server-docker/README.md) |
+| [voorbeeld-database](./voorbeeld-database) | Pizzafabriek oefendatabase voor SQL Server. Een complete database met 9 tabellen, realistische data, views en stored procedures. Bevat pizza's, ingrediënten, bestellingen, klanten en medewerkers. Inclusief 50+ voorbeeld queries van basis tot gevorderd niveau en 15 oefenopgaven voor studenten. Perfect voor het leren en oefenen van SQL queries, JOINs, aggregaties en database concepten. | [📖 README](./voorbeeld-database/README.md) |
 
 ### Voorbeelden en Tutorials in andere repositories
 
