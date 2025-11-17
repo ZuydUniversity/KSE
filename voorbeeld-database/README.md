@@ -256,7 +256,7 @@ WHERE Status = 'Geannuleerd'
 AND Besteldatum < DATEADD(MONTH, -6, GETDATE());
 ```
 
-### Window Functions
+### Window Functions (alleen verdieping)
 
 ```sql
 -- Rangschikking pizza's per categorie op basis van prijs
@@ -277,7 +277,7 @@ FROM Klanten k
 INNER JOIN Bestellingen b ON k.KlantID = b.KlantID;
 ```
 
-### CTE (Common Table Expressions)
+### CTE (Common Table Expressions) (alleen verdieping)
 
 ```sql
 -- Pizza's met hun totale ingrediënt kosten
@@ -302,7 +302,7 @@ FROM PizzaKosten
 ORDER BY WinstPercentage DESC;
 ```
 
-### Stored Procedures gebruiken
+### Stored Procedures gebruiken (alleen verdieping)
 
 ```sql
 -- Top 10 populairste pizza's ophalen
