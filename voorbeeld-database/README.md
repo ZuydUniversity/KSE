@@ -49,8 +49,8 @@ erDiagram
     }
 
     PizzaIngredienten {
-        int PizzaID FK
-        int IngredientID FK
+        int PizzaID PK,FK
+        int IngredientID PK,FK
         decimal Hoeveelheid
     }
 
@@ -89,8 +89,8 @@ erDiagram
     }
 
     Bestelregels {
-        int BestellingID FK
-        int Regelnummer
+        int BestellingID PK,FK
+        int Regelnummer PK
         int PizzaID FK
         int Aantal
         decimal Prijs
