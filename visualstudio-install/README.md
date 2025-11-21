@@ -62,16 +62,16 @@ Bij de eerste keer opstarten kun je je ontwikkelingsomgeving verder configureren
 ## Problemen?
 Neem bij installatieproblemen contact op met de docent.
 
-## .NET Framework vs .NET Core
+## .NET Framework vs .NET
 
-In onze lessen werken we met **.NET Core versie 9.0**. Het is belangrijk om het verschil te begrijpen tussen .NET Framework en .NET Core:
+In onze lessen werken we met **.NET 9.0** (voorheen .NET Core genoemd). Het is belangrijk om het verschil te begrijpen tussen .NET Framework en het moderne .NET:
 
 ### .NET Framework
 - Oudere technologie die alleen op Windows werkt
-- End of Life (EOL) gepland voor 2027
-- Wordt niet meer actief doorontwikkeld
+- Wordt niet meer actief doorontwikkeld met nieuwe features
+- Blijft ondersteund voor bestaande applicaties
 
-### .NET Core (nu gewoon ".NET" genoemd)
+### .NET (voorheen .NET Core)
 - Moderne, cross-platform technologie (Windows, macOS, Linux)
 - Actief in ontwikkeling met regelmatige updates
 - Betere performance en meer moderne features
@@ -80,4 +80,4 @@ In onze lessen werken we met **.NET Core versie 9.0**. Het is belangrijk om het 
 **Let op:** .NET 10 is beschikbaar voor Visual Studio 2026. Wij blijven voorlopig werken met .NET 9.0 in combinatie met Visual Studio 2022.
 
 ### Aanbeveling
-Hoewel .NET Framework pas in 2027 end-of-life gaat, bevelen wij sterk aan om met .NET Core te werken. Dit is de toekomst van .NET ontwikkeling en biedt veel voordelen op het gebied van performance, cross-platform ondersteuning en moderne features.
+Wij bevelen sterk aan om met .NET te werken. Dit is de toekomst van .NET ontwikkeling en biedt veel voordelen op het gebied van performance, cross-platform ondersteuning en moderne features.
