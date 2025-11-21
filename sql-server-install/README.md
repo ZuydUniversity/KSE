@@ -40,7 +40,7 @@ Let op: SQL Server 2022 en 2025 vereisen aanvullende registratie; daarom adviser
 7. Instance Configuration:
    - Default instance (MSSQLSERVER) volstaat;
 8. Server Configuration:
-   - Laat standaard service accounts staan (NT SERVICE\...).
+   - Laat standaard service accounts staan (NT SERVICE\...);
    - Collation standaard behouden.
 9. Database Engine Configuration:
    - Authentication: Windows authentication.
