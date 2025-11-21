@@ -46,7 +46,7 @@ Let op: SQL Server 2022 en 2025 vereisen aanvullende registratie; daarom adviser
    - Authentication: Windows authentication.
    - Add Current User voor sysadmin.
    - Data Directories eventueel naar aparte SSD.
-   - TempDB: standaard ok; 
+   - TempDB: standaard ok. 
 10. Filestream uit laten.
 11. Ready to Install controleren en Install.
 12. Wachten tot voltooiing; instance name noteren.
