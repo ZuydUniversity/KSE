@@ -64,4 +64,12 @@ Let op: SQL Server 2022 en 2025 vereisen aanvullende registratie; daarom adviser
 ## 8. Veelvoorkomende issues
 - Antivirus blokkeert bestanden: tijdelijke uitzondering toevoegen.
 - Poortconflict: wijzig poort via SQL Server Configuration Manager (TCP/IP > IPAll > TCP Port).
+- **Fout: "Wait on the Database Engine recovery handle failed"**
+  1. Start Command Prompt (cmd) als administrator
+  2. Voer het volgende commando in en druk op Enter:
+     ```
+     reg add "HKLM\SYSTEM\CurrentControlSet\Services\stornvme\Parameters\Device" /v "ForcedPhysicalSectorSizeInBytes" /t reg_multi_sz /d "* 4095" /f
+     ```
+  3. Herstart de computer
+  4. Probeer de SQL Server installatie opnieuw
 
