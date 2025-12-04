@@ -8,7 +8,10 @@ namespace DotNet9WebAPI
 
             // Add services to the container.
             builder.Services.AddControllers();
-            
+
+            // Leave for demo purpose
+            builder.Services.AddOpenApi();
+
             // Use Swashbuckle for both generation and UI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -20,6 +23,9 @@ namespace DotNet9WebAPI
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+
+                // Leave for demo purpose
+                app.MapOpenApi();
             }
 
             app.UseHttpsRedirection();

@@ -113,9 +113,21 @@ if (app.Environment.IsDevelopment())
 - Lightweight en performant
 - Focus op de **specificatie**
 
-#### Voor UI heb je nog steeds Swagger (of alternatieven) nodig
+#### Voor UI kun je Postman gebruiken (of alternatieven)
 
-Als je een visuele interface wilt, kun je **Swashbuckle toevoegen** (voor Swagger UI):
+Importeren via URL (Aanbevolen)
+- Start je .NET 9 API applicatie
+- Open Postman
+- Klik op Import (linksboven)
+- Selecteer het Link tabblad
+- Plak de URL van je OpenAPI spec: https://localhost:7202/openapi/v1.json
+- Klik op Continue
+
+Postman genereert automatisch een volledige collection met al je endpoints die je zo ook kunt testen.
+
+### Wil je toch Swagger?
+
+Als je Swagger als visuele interface wilt, kun je **Swashbuckle toevoegen** (voor Swagger UI):
 
 In .csproj file:
 ```xml
