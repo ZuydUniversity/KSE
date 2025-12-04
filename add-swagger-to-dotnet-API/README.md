@@ -189,9 +189,107 @@ Voor nieuwe .NET 9 projecten:
    - **ReDoc** - focus op documentatie
    - **RapiDoc** - customizable
 
-## Toevoegen Swagger aan .NET 9 API project
+## Swagger Toevoegen aan .NET 9 API Project
 
-todo
+Dit project demonstreert hoe je Swagger UI toevoegt aan een .NET 9 Web API project dat al OpenAPI ondersteuning heeft.
+
+### Stap 1: Installeer Swashbuckle NuGet Package
+
+Open de **Package Manager Console** in Visual Studio en voer het volgende commando uit:
+
+```powershell
+Install-Package Swashbuckle.AspNetCore
+```
+
+Dit voegt de volgende package reference toe aan je `.csproj` file:
+
+```xml
+<PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
+```
+
+Let op dat je niet de 10.x.x versie installeert, deze is bedoeld voor .NET 10.
+
+### Stap 2: Pas Program.cs aan
+
+Vervang de OpenAPI configuratie door Swashbuckle configuratie in `Program.cs`:
+
+**Voor (alleen OpenAPI):**
+```csharp
+builder.Services.AddOpenApi();
+
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+}
+```
+
+**Na (met Swagger UI):**
+```csharp
+// Add services to the container.
+builder.Services.AddControllers();
+
+// Use Swashbuckle for both generation and UI
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+```
+
+### Stap 3: Pas launchSettings.json aan
+
+Wijzig de `launchUrl` in `Properties/launchSettings.json` om automatisch Swagger UI te openen bij het starten:
+
+```json
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5088",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:7202;http://localhost:5088",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
+```
+
+De belangrijkste wijziging is: `"launchUrl": "swagger"`
+
+### Stap 4: Start de Applicatie
+
+Wanneer je de applicatie nu start (F5 in Visual Studio), wordt automatisch de Swagger UI geopend op:
+- `https://localhost:7202/swagger` (voor HTTPS)
+- `http://localhost:5088/swagger` (voor HTTP)
+
+### Resultaat
+
+Je hebt nu:
+- ✅ Een volledig functionele Swagger UI interface
+- ✅ Interactieve API documentatie
+- ✅ Mogelijkheid om endpoints direct te testen vanuit de browser
+- ✅ Automatische OpenAPI/Swagger specificatie generatie
+
 
 ## Samenvatting
 
