@@ -11,7 +11,8 @@ Dit docker-compose bestand biedt een lokale SQL Server instance voor development
 
 ### Windows (Getest)
 
-1. **WSL 2 (Aanbevolen voor Windows):**
+1. **WSL 2 installeren (Aanbevolen voor Windows):**
+   - **Wat is WSL?** WSL (Windows Subsystem for Linux) maakt het mogelijk om Linux direct op Windows te draaien zonder een virtuele machine. WSL 2 gebruikt een echte Linux kernel, wat zorgt voor betere performance en volledige systeemcompatibiliteit - ideaal voor Docker containers.
    - Zie voor handleiding: https://learn.microsoft.com/en-us/windows/wsl/install
    - Installeer WSL 2 als je dit nog niet hebt: `wsl --install`
    - Docker Desktop zal automatisch WSL 2 gebruiken voor betere performance
