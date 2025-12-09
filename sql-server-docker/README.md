@@ -11,25 +11,27 @@ Dit docker-compose bestand biedt een lokale SQL Server instance voor development
 
 ### Windows (Getest)
 
-1. **Download Docker Desktop voor Windows:**
+1. **WSL 2 (Aanbevolen voor Windows):**
+   - Zie voor handleiding: https://learn.microsoft.com/en-us/windows/wsl/install
+   - Installeer WSL 2 als je dit nog niet hebt: `wsl --install`
+   - Docker Desktop zal automatisch WSL 2 gebruiken voor betere performance
+
+2. **Download Docker Desktop voor Windows:**
    - Ga naar https://docs.docker.com/desktop/install/windows-install/
    - Download "Docker Desktop for Windows"
 
-2. **Installatie:**
+3. **Installatie:**
    - Voer het gedownloade `.exe` bestand uit als administrator
    - Volg de installatie wizard
    - **Belangrijk:** Zorg ervoor dat "Use WSL 2 instead of Hyper-V" is aangevinkt (aanbevolen)
    - Herstart je computer na installatie
 
-3. **Verificatie:**
+4. **Verificatie:**
    - Start Docker Desktop vanuit het Start menu
    - Open Command Prompt of PowerShell
    - Test de installatie: `docker --version`
    - Test docker-compose: `docker-compose --version`
 
-4. **WSL 2 (Aanbevolen voor Windows):**
-   - Installeer WSL 2 als je dit nog niet hebt: `wsl --install`
-   - Docker Desktop zal automatisch WSL 2 gebruiken voor betere performance
 
 ### macOS (Niet getest, maar zou in principe hetzelfde moeten werken)
 
@@ -59,14 +61,13 @@ Dit docker-compose bestand biedt een lokale SQL Server instance voor development
 
 ### SQL Server starten
 
-**⚠️ Belangrijk:** Voer alle docker-compose commando's uit vanuit de map waar het `docker-compose.yml` bestand staat.
+Download het docker-compose.yml bestand uit deze map en sla het op in een voor jou terug te vinden lokale  folder.
+
+**⚠️ Belangrijk:** Voer alle docker-compose commando's uit met de Windows command prompt vanuit de map waar het `docker-compose.yml` bestand staat.
 
 ```bash
 # Navigeer naar de juiste map (pas het pad aan naar jouw situatie)
-cd C:\pad\naar\jouw\KSE\repository
-
-# Of als je al in de repository root bent:
-cd sql-server-docker
+cd C:\pad\naar\jouw\docker\file\
 
 # Start de services
 docker-compose up -d
