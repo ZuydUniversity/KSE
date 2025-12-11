@@ -48,6 +48,14 @@ jobs:
               errors=$((errors + 1))
             fi
             
+            # Rule 1c: Check if directory name is lowercase
+            if [[ "$dirname" =~ [A-Z] ]]; then
+              echo "❌ ERROR: Directory '$dirname' contains uppercase letters. Use only lowercase."
+              errors=$((errors + 1))
+            else
+              echo "✅ Directory name is lowercase"
+            fi
+            
             # Rule 2: Check if README.md exists
             if [[ ! -f "$dirname/README.md" ]]; then
               echo "❌ ERROR: Directory '$dirname' is missing README.md"
@@ -96,7 +104,7 @@ jobs:
             echo "❌ Found $errors error(s). Please fix the issues above."
             echo ""
             echo "Rules:"
-            echo "1. All top-level directories must use hyphens (-) instead of spaces or underscores"
+            echo "1. All top-level directories must use lowercase, hyphens (-), no spaces or underscores"
             echo "2. Each directory must contain a non-empty README.md file"
             echo "3. Each directory must be linked in the main README.md under '### Voorbeelden en Tutorials in deze repository'"
             exit 1
