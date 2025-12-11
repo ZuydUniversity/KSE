@@ -75,16 +75,15 @@ jobs:
             # and the next "###" heading
             if [[ -f "README.md" ]]; then
               # Get the content between the specific section headers
-              section_content=$(awk '/^### Voorbeelden en Tutorials in deze repository$/,/^### [^#]/ {print}' README.md | head -n -1)
+              section_content=$(awk '/^### Voorbeelden en Tutorials in deze repository$/,/^### / {print}' README.md)
               
-              # Check if the directory name appears as a link in this section
-              # Looking for patterns like [add-swagger-to-dotnet-API](./add-swagger-to-dotnet-API)
-              if echo "$section_content" | grep -q "\[$dirname\](./$dirname)" || \
-                 echo "$section_content" | grep -q "\[.*\](./$dirname)"; then
+              # Check if the directory appears in a link to ./$dirname
+              # This matches patterns like [anything](./dirname) regardless of emoji or table formatting
+              if echo "$section_content" | grep -qE "\]\(\.\/${dirname}\)"; then
                 echo "✅ Directory is linked in main README.md"
               else
                 echo "❌ ERROR: Directory '$dirname' is not linked in the 'Voorbeelden en Tutorials in deze repository' section of README.md"
-                echo "   Expected format: [$dirname](./$dirname) or [Description](./$dirname)"
+                echo "   Expected: a link with ](./$dirname) in the section"
                 errors=$((errors + 1))
               fi
             else
