@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - main
+  commit:
+    branches:
+      - pipelines
 
 jobs:
   validate-structure:
