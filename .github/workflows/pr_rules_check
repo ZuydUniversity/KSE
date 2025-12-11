@@ -1,0 +1,86 @@
+name: PR Rules Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-structure:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Check folder naming and README files
+        shell: bash
+        run: |
+          echo "🔍 Checking repository structure..."
+          
+          # Initialize error counter
+          errors=0
+          
+          # Get all top-level directories (excluding .git and .github)
+          for dir in */; do
+            # Remove trailing slash
+            dirname="${dir%/}"
+            
+            # Skip .git and .github directories
+            if [[ "$dirname" == ".git" || "$dirname" == ".github" ]]; then
+              continue
+            fi
+            
+            echo ""
+            echo "📁 Checking: $dirname"
+            
+            # Rule 1: Check for spaces in directory name
+            if [[ "$dirname" =~ \  ]]; then
+              echo "❌ ERROR: Directory '$dirname' contains spaces. Use hyphens (-) instead."
+              errors=$((errors + 1))
+            else
+              echo "✅ Directory name follows naming convention (no spaces)"
+            fi
+            
+            # Rule 1b: Check if underscores are used
+            if [[ "$dirname" =~ _ ]]; then
+              echo "❌ ERROR: Directory '$dirname' contains underscores. Use hyphens (-) instead."
+              errors=$((errors + 1))
+            fi
+            
+            # Rule 2: Check if README.md exists
+            if [[ ! -f "$dirname/README.md" ]]; then
+              echo "❌ ERROR: Directory '$dirname' is missing README.md"
+              errors=$((errors + 1))
+            else
+              echo "✅ README.md exists"
+              
+              # Rule 2b: Check if README.md has content (not empty)
+              if [[ ! -s "$dirname/README.md" ]]; then
+                echo "❌ ERROR: README.md in '$dirname' is empty"
+                errors=$((errors + 1))
+              else
+                # Check if README.md has meaningful content (more than just whitespace)
+                if [[ $(grep -cv '^[[:space:]]*$' "$dirname/README.md") -eq 0 ]]; then
+                  echo "❌ ERROR: README.md in '$dirname' contains only whitespace"
+                  errors=$((errors + 1))
+                else
+                  echo "✅ README.md has content"
+                fi
+              fi
+            fi
+          done
+          
+          echo ""
+          echo "════════════════════════════════════════"
+          if [[ $errors -eq 0 ]]; then
+            echo "✅ All checks passed! Repository structure is correct."
+            exit 0
+          else
+            echo "❌ Found $errors error(s). Please fix the issues above."
+            echo ""
+            echo "Rules:"
+            echo "1. All top-level directories must use hyphens (-) instead of spaces"
+            echo "2. Each directory must contain a non-empty README.md file"
+            exit 1
+          fi
