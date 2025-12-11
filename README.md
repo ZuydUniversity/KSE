@@ -59,4 +59,24 @@ Leden van het kenniscluster kunnen bijdragen door:
 3. Voorbeelden en praktische cases te delen
 4. Feedback te geven op bestaande content
 
+### Werkwijze met branches en pull requests
+
+Voor het toevoegen of wijzigen van content werken we met **feature branches** en **pull requests** naar de `main` branch. Dit zorgt voor kwaliteitscontrole en consistentie in de repository.
+
+**Automatische kwaliteitscontroles**
+
+Bij elke pull request naar `main` worden automatisch de volgende structuurregels gecontroleerd:
+
+1. **Mapnamen**: Alle top-level mappen moeten lowercase zijn en `-` (hyphens) als scheidingsteken gebruiken. Geen spaties of underscores toegestaan.
+   - ✅ Correct: `add-swagger-to-net-api`
+   - ❌ Fout: `Add Swagger to NET API`, `add_swagger_to_net_api`
+
+2. **README.md per map**: Elke map moet een `README.md` bestand bevatten met inhoudelijke tekst (niet leeg).
+
+3. **Documentatie in hoofdREADME**: Elke map moet gedocumenteerd zijn in de sectie "Voorbeelden en Tutorials in deze repository" van de hoofd-README.md met een link naar de map.
+
+De pipeline zal de PR blokkeren als aan deze regels niet wordt voldaan. Dit zorgt ervoor dat de repository gestructureerd en goed gedocumenteerd blijft.
+
+
+
 Voor vragen of suggesties kun je contact opnemen met een van de bovenstaande leden van het kenniscluster.
