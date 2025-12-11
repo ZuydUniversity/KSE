@@ -1,0 +1,111 @@
+name: PR Rules Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-structure:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Check folder naming and README files
+        shell: bash
+        run: |
+          echo "🔍 Checking repository structure..."
+          
+          # Initialize error counter
+          errors=0
+          
+          # Get all top-level directories (excluding .git and .github)
+          for dir in */; do
+            # Remove trailing slash
+            dirname="${dir%/}"
+            
+            # Skip .git and .github directories
+            if [[ "$dirname" == ".git" || "$dirname" == ".github" ]]; then
+              continue
+            fi
+            
+            echo ""
+            echo "📁 Checking: $dirname"
+            
+            # Rule 1: Check for spaces in directory name
+            if [[ "$dirname" =~ \  ]]; then
+              echo "❌ ERROR: Directory '$dirname' contains spaces. Use hyphens (-) instead."
+              errors=$((errors + 1))
+            else
+              echo "✅ Directory name follows naming convention (no spaces)"
+            fi
+            
+            # Rule 1b: Check if underscores are used
+            if [[ "$dirname" =~ _ ]]; then
+              echo "❌ ERROR: Directory '$dirname' contains underscores. Use hyphens (-) instead."
+              errors=$((errors + 1))
+            fi
+            
+            # Rule 1c: Check if directory name is lowercase
+            if [[ "$dirname" =~ [A-Z] ]]; then
+              echo "❌ ERROR: Directory '$dirname' contains uppercase letters. Use only lowercase."
+              errors=$((errors + 1))
+            else
+              echo "✅ Directory name is lowercase"
+            fi
+            
+            # Rule 2: Check if README.md exists
+            if [[ ! -f "$dirname/README.md" ]]; then
+              echo "❌ ERROR: Directory '$dirname' is missing README.md"
+              errors=$((errors + 1))
+            else
+              echo "✅ README.md exists"
+              
+              # Rule 2b: Check if README.md has content (not empty)
+              if [[ ! -s "$dirname/README.md" ]]; then
+                echo "❌ ERROR: README.md in '$dirname' is empty"
+                errors=$((errors + 1))
+              else
+                # Check if README.md has meaningful content (more than just whitespace)
+                if [[ $(grep -cv '^[[:space:]]*$' "$dirname/README.md") -eq 0 ]]; then
+                  echo "❌ ERROR: README.md in '$dirname' contains only whitespace"
+                  errors=$((errors + 1))
+                else
+                  echo "✅ README.md has content"
+                fi
+              fi
+            fi
+            
+            # Rule 3: Check if directory is linked in main README.md
+            if [[ -f "README.md" ]]; then
+              # Simply check if the link pattern exists anywhere in README.md
+              # Looking for ](./$dirname) pattern
+              if grep -qF "](./$dirname)" README.md; then
+                echo "✅ Directory is linked in main README.md"
+              else
+                echo "❌ ERROR: Directory '$dirname' is not linked in the 'Voorbeelden en Tutorials in deze repository' section of README.md"
+                echo "   Expected: a markdown link with ](./$dirname)"
+                echo "   DEBUG: Looking for pattern: ](./$dirname)"
+                errors=$((errors + 1))
+              fi
+            else
+              echo "⚠️  WARNING: Main README.md not found, skipping link check"
+            fi
+          done
+          
+          echo ""
+          echo "════════════════════════════════════════"
+          if [[ $errors -eq 0 ]]; then
+            echo "✅ All checks passed! Repository structure is correct."
+            exit 0
+          else
+            echo "❌ Found $errors error(s). Please fix the issues above."
+            echo ""
+            echo "Rules:"
+            echo "1. All top-level directories must use lowercase, hyphens (-), no spaces or underscores"
+            echo "2. Each directory must contain a non-empty README.md file"
+            echo "3. Each directory must be linked in the main README.md under '### Voorbeelden en Tutorials in deze repository'"
+            exit 1
+          fi

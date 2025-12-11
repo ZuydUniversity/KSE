@@ -10,7 +10,7 @@ Deze repository bevat richtlijnen, uitleg en documentatie voor diverse software 
 
 | Map | Beschrijving |
 |-----|--------------|
-| 📝 [add-swagger-to-dotnet-API](./add-swagger-to-dotnet-API) | Tutorial over het toevoegen van Swagger/OpenAPI documentatie aan een .NET 9 Web API. Verklaart het verschil tussen OpenAPI (specificatie) en Swagger (toolset), demonstreert Swashbuckle implementatie en legt belangrijke wijzigingen tussen .NET 8 en .NET 9 uit. Inclusief praktische voorbeelden voor automatische API-documentatie en interactieve testing. |
+| 📝 [add-swagger-to-net-api](./add-swagger-to-net-api) | Tutorial over het toevoegen van Swagger/OpenAPI documentatie aan een .NET 9 Web API. Verklaart het verschil tussen OpenAPI (specificatie) en Swagger (toolset), demonstreert Swashbuckle implementatie en legt belangrijke wijzigingen tussen .NET 8 en .NET 9 uit. Inclusief praktische voorbeelden voor automatische API-documentatie en interactieve testing. |
 | 🐳 [sql-server-docker](./sql-server-docker) | Complete SQL Server ontwikkelomgeving met Docker. Bevat een Docker Compose setup voor lokale SQL Server instantie met Adminer web interface voor databasebeheer. Perfect voor studenten en docenten die een consistente database omgeving nodig hebben zonder lokale SQL Server installatie. |
 | 🗄️ [sql-server-install](./sql-server-install) | Installatiehandleiding voor Microsoft SQL Server 2019 op Windows 11 desktop. Stap-voor-stap instructies vanaf download via Azure Portal (Student Benefits) tot complete configuratie. Inclusief SSMS installatie, post-configuratie, validatie en troubleshooting. Perfect voor studenten die een lokale SQL Server ontwikkelomgeving nodig hebben. |
 | 💻 [visualstudio-install](./visualstudio-install) | Installatiehandleiding voor Visual Studio 2022 Enterprise op Windows 11. Stap-voor-stap instructies vanaf download via Azure Portal (Student Benefits) tot workload selectie. Inclusief uitleg over .NET 9.0 vs .NET Framework, workloads voor desktop/web/mobile development en SQL Server integratie. Perfect voor studenten die een professionele .NET ontwikkelomgeving nodig hebben. |
@@ -58,5 +58,25 @@ Leden van het kenniscluster kunnen bijdragen door:
 2. Bestaande documentatie bij te werken en te verbeteren
 3. Voorbeelden en praktische cases te delen
 4. Feedback te geven op bestaande content
+
+### Werkwijze met branches en pull requests
+
+Voor het toevoegen of wijzigen van content werken we met **feature branches** en **pull requests** naar de `main` branch. Dit zorgt voor kwaliteitscontrole en consistentie in de repository.
+
+**Automatische kwaliteitscontroles**
+
+Bij elke pull request naar `main` worden automatisch de volgende structuurregels gecontroleerd:
+
+1. **Mapnamen**: Alle top-level mappen moeten lowercase zijn en `-` (hyphens) als scheidingsteken gebruiken. Geen spaties of underscores toegestaan.
+   - ✅ Correct: `add-swagger-to-net-api`
+   - ❌ Fout: `Add Swagger to NET API`, `add_swagger_to_net_api`
+
+2. **README.md per map**: Elke map moet een `README.md` bestand bevatten met inhoudelijke tekst (niet leeg).
+
+3. **Documentatie in hoofdREADME**: Elke map moet gedocumenteerd zijn in de sectie "Voorbeelden en Tutorials in deze repository" van de hoofd-README.md met een link naar de map.
+
+De pipeline zal de PR blokkeren als aan deze regels niet wordt voldaan. Dit zorgt ervoor dat de repository gestructureerd en goed gedocumenteerd blijft.
+
+
 
 Voor vragen of suggesties kun je contact opnemen met een van de bovenstaande leden van het kenniscluster.
