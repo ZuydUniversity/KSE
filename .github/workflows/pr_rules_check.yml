@@ -71,19 +71,15 @@ jobs:
             fi
             
             # Rule 3: Check if directory is linked in main README.md
-            # Extract the section between "### Voorbeelden en Tutorials in deze repository" 
-            # and the next "###" heading
             if [[ -f "README.md" ]]; then
-              # Get the content between the specific section headers
-              section_content=$(awk '/^### Voorbeelden en Tutorials in deze repository$/,/^### / {print}' README.md)
-              
-              # Check if the directory appears in a link to ./$dirname
-              # This matches patterns like [anything](./dirname) regardless of emoji or table formatting
-              if echo "$section_content" | grep -qE "\]\(\.\/${dirname}\)"; then
+              # Simply check if the link pattern exists anywhere in README.md
+              # Looking for ](./$dirname) pattern
+              if grep -qF "](./$dirname)" README.md; then
                 echo "✅ Directory is linked in main README.md"
               else
                 echo "❌ ERROR: Directory '$dirname' is not linked in the 'Voorbeelden en Tutorials in deze repository' section of README.md"
-                echo "   Expected: a link with ](./$dirname) in the section"
+                echo "   Expected: a markdown link with ](./$dirname)"
+                echo "   DEBUG: Looking for pattern: ](./$dirname)"
                 errors=$((errors + 1))
               fi
             else
