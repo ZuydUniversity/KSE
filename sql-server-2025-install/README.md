@@ -21,4 +21,4 @@ Voor meer gedetailleerde informatie verwijzen we naar [Hardware and Software Req
 ## 4. Start installer
 - Rechtermuis knop op SQL2025-SSEI-Expr.exe en "run as administrator"
 
-## 5. 
+## 5. TODO / Deze stap moet nog, die kan ik even niet meer reproduceren op mijn pc, want die staat er al.
