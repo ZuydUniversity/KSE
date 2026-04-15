@@ -16,7 +16,7 @@ Deze repository bevat richtlijnen, uitleg en documentatie voor diverse software 
 | 🗄️ [sql-server-2025-install](./sql-server-2025-install) | Installatiehandleiding voor Microsoft SQL Server 2025 op Windows 11 desktop. Stap-voor-stap instructies vanaf download via tot complete configuratie. Inclusief SSMS installatie, post-configuratie, validatie en troubleshooting. Perfect voor studenten die een lokale SQL Server ontwikkelomgeving nodig hebben. Let op: Deze is nog development |
 | 💻 [visualstudio-install](./visualstudio-install)       | Installatiehandleiding voor Visual Studio 2022 Enterprise op Windows 11. Stap-voor-stap instructies vanaf download via Azure Portal (Student Benefits) tot workload selectie. Inclusief uitleg over .NET 9.0 vs .NET Framework, workloads voor desktop/web/mobile development en SQL Server integratie. Perfect voor studenten die een professionele .NET ontwikkelomgeving nodig hebben. |
 | 🍕 [voorbeeld-database](./voorbeeld-database)           | Pizzafabriek oefendatabase voor SQL Server. Een complete database met 9 tabellen, realistische data, views en stored procedures. Bevat pizza's, ingrediënten, bestellingen, klanten en medewerkers. Inclusief 50+ voorbeeld queries van basis tot gevorderd niveau en 15 oefenopgaven voor studenten. Perfect voor het leren en oefenen van SQL queries, JOINs, aggregaties en database concepten. |
-| [markdown-demo](/markdown-demo)                        | Bevat momenteel een presentatie en readme om een start te kunnen maken met markdown. |
+| [markdown-demo](./markdown-demo)                       | Bevat momenteel een presentatie en readme om een start te kunnen maken met markdown. |
 
 
 ### Voorbeelden en Tutorials in andere repositories
