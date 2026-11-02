@@ -1,83 +1,71 @@
-# Handleiding: Installatie Visual Studio 2022
+# Handleiding: Installatie Visual Studio 2026
+
+> **Let op:** De installatiehandleiding voor Visual Studio 2022 is deprecated. We gebruiken voortaan Visual Studio 2026; volg daarom de instructies op deze pagina.
 
 ## Introductie
-Deze handleiding beschrijft de installatie van Visual Studio 2022 op **Windows 11**. Hoewel inmiddels Visual Studio 2026 beschikbaar is, werken wij in onze lesmaterialen voorlopig nog met Visual Studio 2022.
+
+Deze handleiding beschrijft de installatie van Visual Studio 2026 op **Windows 11**.
 
 ## Systeemvereisten
 
-Voordat je begint met de installatie, controleer of je systeem voldoet aan de volgende minimale vereisten:
+Controleer voor de installatie de actuele [systeemvereisten van Visual Studio](https://learn.microsoft.com/en-us/visualstudio/releases/2026/vs-system-requirements). Houd rekening met voldoende vrije schijfruimte: de benodigde ruimte hangt af van de workloads die je installeert.
 
 - **Besturingssysteem:** Windows 11 (64-bit)
-- **Processor:** Quad-core processor of beter
-- **RAM:** Minimaal 8 GB (16 GB aanbevolen)
-- **Schijfruimte:** Minimaal 20-50 GB vrije ruimte (afhankelijk van geïnstalleerde workloads)
-- **Internetverbinding:** Vereist voor installatie en activatie
+- **RAM:** Minimaal 8 GB; 16 GB of meer wordt aanbevolen
+- **Internetverbinding:** Vereist voor downloaden, installatie en aanmelden
 
 ## Belangrijke opmerking bij SQL Server
-Als je voor je vakken ook SQL Server nodig hebt, installeer dan **eerst SQL Server** voordat je Visual Studio installeert. Dit voorkomt mogelijke conflicten tussen de twee producten.
+
+Als je voor je vakken ook SQL Server nodig hebt, installeer dan **eerst SQL Server** en daarna Visual Studio.
 
 Zie de [SQL Server installatiehandleiding](../sql-server-install/README.md) voor meer informatie.
 
-## Downloaden van Visual Studio 2022
+## Visual Studio 2026 downloaden
 
-### Azure for Students
-1. Ga naar de [Azure Portal](https://portal.azure.com)
-2. Activeer je **Azure for Students** benefits met je studentenaccount (https://azure.microsoft.com/en-us/free/students) als je dat nog niet hebt gedaan.
-3. Navigeer naar Education → Software
-4. Zoek naar Visual Studio 2022
-5. Download bij voorkeur de **Enterprise Licentie** - deze is gratis beschikbaar voor studenten
+1. Ga naar de officiële [Visual Studio-downloadpagina](https://visualstudio.microsoft.com/downloads/).
+2. Download de Visual Studio Installer en start het installatiebestand.
+3. Kies de editie waarvoor je een licentie hebt. Gebruik Enterprise alleen als deze editie beschikbaar is via de onderwijsinstelling of je studentenaccount; anders kun je voor onderwijsdoeleinden de Community-editie gebruiken.
+4. Meld je eventueel aan met je studentenaccount om beschikbare onderwijslicenties te controleren.
 
 ## Workloads installeren
 
-Tijdens de installatie moet je specifieke workloads selecteren. Welke workloads je nodig hebt, hangt af van de vakken die je volgt:
+Selecteer in de Visual Studio Installer de workloads die je nodig hebt. Welke workloads nodig zijn, hangt af van de vakken die je volgt.
 
-### Voor Console en Windows Forms applicaties
-Installeer de volgende workloads:
+### Console- en Windows Forms-applicaties
+
 - **.NET desktop development**
-- **Data storage and processing**
+- **Data storage and processing** (als je SQL Server-tools vanuit Visual Studio nodig hebt)
 
-### Voor Web applicaties
-Installeer de volgende workload:
+### Webapplicaties
+
 - **ASP.NET and web development**
-- **Data storage and processing**
+- **Data storage and processing** (als je SQL Server-tools vanuit Visual Studio nodig hebt)
 
-### Voor mobiele applicaties
-Installeer de volgende workload:
+### Mobiele applicaties
+
 - **.NET Multi-platform App UI development**
-- **Data storage and processing**
+- **Data storage and processing** (als je SQL Server-tools vanuit Visual Studio nodig hebt)
 
 ## Installatiestappen
 
-1. Start het gedownloade installatiebestand
-2. De Visual Studio Installer wordt geopend
-3. Selecteer de workloads die je nodig hebt (zie bovenstaande lijst)
-4. Klik op **Install**
-5. Wacht tot de installatie voltooid is (dit kan enige tijd duren)
-6. Start Visual Studio 2022 op
-7. Log in met je studentenaccount om je Enterprise licentie te activeren
+1. Open de Visual Studio Installer.
+2. Selecteer de gewenste Visual Studio-editie en klik op **Install**.
+3. Selecteer de workloads die je nodig hebt.
+4. Controleer de installatiekeuzes en klik op **Install**.
+5. Wacht tot de installatie is voltooid. Dit kan enige tijd duren.
+6. Start Visual Studio 2026 en meld je aan met je account.
+7. Volg eventuele licentie-instructies die bij jouw editie horen.
+
+## .NET Framework en .NET
+
+**.NET Framework** is de oudere Windows-only technologie. Het moderne **.NET** is cross-platform en wordt actief doorontwikkeld. Gebruik voor nieuwe projecten het .NET-framework dat in de opdracht of het lesmateriaal wordt genoemd.
+
+In deze repository staan ook voorbeelden voor **.NET 9**. Als je zo'n project bouwt en de .NET 9 SDK niet op je computer staat, installeer die dan naast Visual Studio via de officiële [.NET-downloadpagina](https://dotnet.microsoft.com/download/dotnet/9.0). Visual Studio 2026 kan ook worden gebruikt voor projecten die een nieuwere .NET-versie vereisen.
 
 ## Na de installatie
-Bij de eerste keer opstarten kun je je ontwikkelingsomgeving verder configureren naar eigen voorkeur (thema, shortcuts, etc.).
+
+Bij de eerste keer opstarten kun je je ontwikkelomgeving verder configureren, bijvoorbeeld het thema en de toetsenbordsnelkoppelingen. Controleer ook of de benodigde .NET SDK voor je opdracht is geïnstalleerd.
 
 ## Problemen?
+
 Neem bij installatieproblemen contact op met de docent.
-
-## .NET Framework vs .NET
-
-In onze lessen werken we met **.NET 9.0** (voorheen .NET Core genoemd). Het is belangrijk om het verschil te begrijpen tussen .NET Framework en het moderne .NET:
-
-### .NET Framework
-- Oudere technologie die alleen op Windows werkt
-- Wordt niet meer actief doorontwikkeld met nieuwe features
-- Blijft ondersteund voor bestaande applicaties
-
-### .NET (voorheen .NET Core)
-- Moderne, cross-platform technologie (Windows, macOS, Linux)
-- Actief in ontwikkeling met regelmatige updates
-- Betere performance en meer moderne features
-- **Wij gebruiken versie 9.0** - dit is de versie die compatibel is met Visual Studio 2022
-
-**Let op:** .NET 10 is beschikbaar voor Visual Studio 2026. Wij blijven voorlopig werken met .NET 9.0 in combinatie met Visual Studio 2022.
-
-### Aanbeveling
-Wij bevelen sterk aan om met .NET te werken. Dit is de toekomst van .NET ontwikkeling en biedt veel voordelen op het gebied van performance, cross-platform ondersteuning en moderne features.
