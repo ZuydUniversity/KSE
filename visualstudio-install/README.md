@@ -8,7 +8,7 @@ Deze handleiding beschrijft de installatie van Visual Studio 2026 op **Windows 1
 
 ## Systeemvereisten
 
-Controleer voor de installatie de actuele [systeemvereisten van Visual Studio](https://visualstudio.microsoft.com/vs/system-requirements/). Houd rekening met voldoende vrije schijfruimte: de benodigde ruimte hangt af van de workloads die je installeert.
+Controleer voor de installatie de actuele [systeemvereisten van Visual Studio](https://learn.microsoft.com/en-us/visualstudio/releases/2026/vs-system-requirements). Houd rekening met voldoende vrije schijfruimte: de benodigde ruimte hangt af van de workloads die je installeert.
 
 - **Besturingssysteem:** Windows 11 (64-bit)
 - **RAM:** Minimaal 8 GB; 16 GB of meer wordt aanbevolen
