@@ -159,7 +159,8 @@ Dit project gebruikt Swashbuckle om zowel de OpenAPI specificatie te genereren a
 Open de **Package Manager Console** in Visual Studio en voer het volgende commando uit:
 
 ```powershell
-Install-Package Swashbuckle.AspNetCore
+Install-Package Swashbuckle.AspNetCore -Version 9.0.0
+(Install-Package Swashbuckle.AspNetCore als je versie 10 wil)
 ```
 
 Dit voegt de volgende package reference toe aan je `.csproj` file:
