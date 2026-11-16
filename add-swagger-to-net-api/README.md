@@ -186,6 +186,8 @@ if (app.Environment.IsDevelopment())
 
 **Na (met Swagger UI):**
 ```csharp
+using Swashbuckle.AspNetCore.SwaggerGen;
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
