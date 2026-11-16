@@ -17,8 +17,18 @@ Voor meer gedetailleerde informatie verwijzen we naar [Hardware and Software Req
 
 ## 3. Download
 - Op [deze](https://www.microsoft.com/nl-nl/sql-server/sql-server-downloads) pagina kun je de installers downloaden van zowel de SQL Server 2025 developer of de SQL Server 2025 Express.
+- Scroll naar onderaan op de pagina en kies de STANDARD DEVELOPER EDITION.
 
 ## 4. Start installer
-- Rechtermuis knop op SQL2025-SSEI-Expr.exe en "run as administrator"
+- Rechtermuis knop op SQL2025-SSEI-xxxx.exe en "run as administrator"
 
-## 5. TODO / Deze stap moet nog, die kan ik even niet meer reproduceren op mijn pc, want die staat er al.
+## 5. Installatie-wizard
+- Kies Basic en aanvaard de terms.
+- Kies je locatie (best op de C: onder Program Files)
+- Server=localhost;Database=master;Trusted_Connection=True;
+
+## 5. SSMS
+- Installeer de SSMS.
+- Bij de eerste keer openen, server op . zetten en Trust Server Certificate aanvinken.
+- Tools --> Options --> Designers --> "Prevent saving changes that prevent table recreation" uitvinken.
+
